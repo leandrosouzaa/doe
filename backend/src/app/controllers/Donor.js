@@ -13,3 +13,5 @@ class Donor extends Model {
         );
     }
 }
+
+export default Donor;

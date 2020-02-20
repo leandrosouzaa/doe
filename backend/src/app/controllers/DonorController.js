@@ -3,10 +3,18 @@ import Donor from '../models/Donor';
 
 class DonorController {
 
+    // Método para a listagem de doadores
     async index(req, res) {
         
+        // Buscando doadores no banco de dados
         const donors = await Donor.findAll();
 
+        // Verificando se há doadores registrados
+        if (!donors) {
+            return res.status(400).json({error:"Nenhum usuário encontrado."})
+        }
+
+        // Retornando doadores
         return res.json(donors);
     }
 
@@ -28,7 +36,6 @@ class DonorController {
         const {id, name, blood} = await Donor.create(req.body);
 
         //Retornando confirmação
-
         return res.json({
             id,
             name,

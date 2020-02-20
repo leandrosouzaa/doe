@@ -7,5 +7,4 @@ const routes = new Router();
 routes.post('/donors', DonorController.store);
 routes.get('/donors', DonorController.index);
 
-
 export default  routes

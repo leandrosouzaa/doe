@@ -3,8 +3,14 @@ import Donor from '../models/Donor';
 
 class DonorController {
 
-    // Método para cadastro de novo doador
+    async index(req, res) {
+        
+        const donors = await Donor.findAll();
 
+        return res.json(donors);
+    }
+
+    // Método para cadastro de novo doador
     async store(req, res) {
 
         // Criação do esquema de validação

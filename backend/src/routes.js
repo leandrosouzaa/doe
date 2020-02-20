@@ -1,9 +1,11 @@
 import {Router} from 'express';
 
+import DonorController from './app/controllers/DonorController'
+
 const routes = new Router();
 
-routes.get('/teste', (req, res) => {
-    return res.json({response:'Tudo Certo!'})
-})
+routes.post('/donors', DonorController.store);
+routes.get('/donors', DonorController.index);
+
 
 export default  routes

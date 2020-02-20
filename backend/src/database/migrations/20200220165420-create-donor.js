@@ -18,6 +18,14 @@ module.exports = {
         allowNull: false,
         unique: false,
       },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false
+      }
     });
   },
 
